@@ -1,0 +1,74 @@
+<h1>Form Component</h1>
+<p>Trial form</p>
+
+
+<form action="" [formGroup]="studentform" (ngSubmit)="showdata()">
+    <div>
+        <label for="">StudentName{{studentnamelen}}
+            <input type="text" formControlName="studentname" [ngClass]="{'errorclass':formerrors.studentname}" (blur)="logerrors()">
+        </label>
+        
+    </div>
+    <span class="errormessage">{{formerrors.studentname}}</span>
+    <div>
+        <span>Contact type :</span>
+        <label><input type="radio" value="email" formControlName='contacttype'>email</label>
+        <label><input type="radio" value="studentphnno" formControlName='contacttype'>phn</label>
+
+    </div>
+    <div>
+        <label for="">Studentemail
+            <input type="email" formControlName="studentemail" [ngClass]="{'errorclass':formerrors.studentemail}" (blur)="logerrors()">
+        </label>
+
+    </div>
+    <span class="errormessage">{{formerrors.studentemail}}</span>
+    <br>
+    <div>
+        <label for="">Studentphno
+            <input type="number" formControlName="studentphnno"  [ngClass]='{"errorclass":formerrors.studentphnno}' (blur)="logerrors()">
+        </label>
+    </div>
+    <span class="errormessage">{{formerrors.studentphnno}}</span>
+  
+    <div formGroupName="address">
+        <h3>Address</h3>
+    <div>
+        <label for="">city
+            <input type="text" formControlName="city"> 
+        </label>
+    </div>
+    <br>
+    <div>
+        <label for="">state
+            <input type="text" formControlName="state">
+        </label>
+    </div>
+    <br>
+    <div>
+        <label for="">country
+            <input type="text" formControlName="country">
+        </label>
+    </div>
+
+
+    </div>
+    <br>
+    <br>
+
+    <button type="submit">Submit</button>
+
+    <button>LogKeyValues</button>
+    
+</form>
+
+
+
+
+
+
+<!-- <br>
+<br>
+<div *ngIf="showvar">
+    {{studentform.value|json}}
+</div>  -->

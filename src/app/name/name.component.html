@@ -1,0 +1,61 @@
+<h1>Enter your name here</h1>
+
+<input type="text" [formControl]="name">
+
+<p>{{name.value}}</p>
+
+<button (click)="updatename()">Update Name</button>
+
+
+
+<h1>Enter your details</h1>
+
+
+
+<form action="" [formGroup]="profileform" (ngSubmit)="onprofilesubmit()">
+<label for="" >
+    firstname
+    <input type="text" formControlName="firstname">
+</label>
+
+<label for="" >
+    lastname
+    <input type="text" formControlName="lastname">
+</label>
+<br>
+<br>
+
+<span formGroupName="address">
+    <label>
+        street:
+        <input type="text" formControlName="street">
+    </label>
+    
+
+    <label>
+        city:
+        <input type="text" formControlName="city">
+    </label>
+
+</span>
+<p>{{profileform.status}}</p>
+<p>{{profileform.value|json}}</p>
+<button (click)="updateprofile()" >updateprofile</button>
+<button type="submit" [disabled]="!
+profileform.valid">submit profile</button>
+<button (click)="sendprofiletoparent(profileform.value)" [disabled]="!profileform.valid">Send</button>
+
+
+
+</form>
+
+<p>{{profileform.value['firstname']}}</p>
+<p>{{profileform.value['lastname']}}</p>
+
+
+<p *ngFor="let emp of empdata">{{emp.name}} {{emp.sal}}</p>
+
+
+<ol>
+    <li *ngFor="let data of recieveddata" class="c1">{{data.first_name|uppercase}}</li>
+</ol>

@@ -1,0 +1,23 @@
+<h2 [style.background-color]="setcolor">{{childval}}</h2>
+<h2 [style]="setstyle">{{childval2|currency:"INR"}}</h2>
+<div [innerHTML]="comp1"></div>
+<div innerHTML={{comp1}}></div>
+<label>
+    Enter college name
+     <input type="text" #college>
+</label>
+<button (click)="senddtopranet(college.value)" >Send to parent</button>
+<hr>
+<label>enter city
+<input type="text" [(ngModel)]="cityname">
+</label>
+<p>{{cityname}}</p>
+
+<h1 [ngClass]="activeclass">Working with directives</h1>
+
+<h1 [ngStyle]="activestyle">NG STYLES</h1>
+
+
+<h1 appHighlight>Hello world</h1>
+
+

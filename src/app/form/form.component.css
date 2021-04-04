@@ -1,0 +1,9 @@
+.errorclass
+{
+    border:2px solid red;
+}
+
+.errormessage
+{
+    color:red;
+}
